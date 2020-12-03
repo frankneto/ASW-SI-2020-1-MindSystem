@@ -1,0 +1,27 @@
+<div class="container" style="padding: 30px;">
+  <p-card>
+    <p-button
+      label="Sair"
+      styleClass="p-button-link"
+      (click)="sair()">
+    </p-button>
+    <h1 style="margin: 9px; text-align: center;">Mind System</h1>
+    <h5 style="margin-left: 30px;">Admin User</h5>
+    <div class="p-grid p-fluid" >
+      <div class="container" style="margin: 10px;">
+        <div class="row">
+          <div class="col-12">
+            <app-crud-pedido></app-crud-pedido>
+
+          </div>
+          <div class="col-6">
+            <!-- <input type="text" pInputText > -->
+            <app-calendar></app-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+

@@ -1,0 +1,47 @@
+<div class="card">
+  <p-toolbar styleClass="p-mb-4">
+      <ng-template pTemplate="left">
+          <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
+          <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+      </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="listPacientes" [rows]="10" [paginator]="true"
+      [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width: 3rem">
+                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+              </th>
+              <th pSortableColumn="nome">Name <p-sortIcon field="nome"></p-sortIcon></th>
+              <th pSortableColumn="plano">Convênio <p-sortIcon field="plano"></p-sortIcon></th>
+              <th pSortableColumn="data">Data <p-sortIcon field="data"></p-sortIcon></th>
+              <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+              <td>
+                  <p-tableCheckbox [value]="product"></p-tableCheckbox>
+              </td>
+              <td>{{product.nome}}</td>
+              <td>{{product.plano}}</td>
+              <td>{{product.data}}</td>
+              <td>{{product.status}}</td>
+              <td>
+                  <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                  <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+              </td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div class="p-d-flex p-ai-center p-jc-between">
+              No total existe {{listPacientes ? listPacientes.length : 0 }} pedidos.
+          </div>
+      </ng-template>
+  </p-table>
+</div>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

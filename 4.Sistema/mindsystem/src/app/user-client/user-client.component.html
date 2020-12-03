@@ -1,0 +1,77 @@
+<div class="container" style="padding: 30px;">
+  <p-card>
+    <p-button
+      label="Sair"
+      styleClass="p-button-link"
+      (click)="sair()">
+    </p-button>
+    <h1 style="margin: 9px; text-align: center;">Mind System</h1>
+    <h5 style="margin-left: 30px;">Calendário de consultas marcadas</h5>
+    <div class="p-grid p-fluid" >
+      <div class="container" style="margin: 10px;">
+        <div class="row">
+          <div class="col-6">
+            <app-calendar></app-calendar>
+          </div>
+          <div class="col-6">
+            <p></p>
+            <h5>Minhas solicitações de consulta</h5>
+            <p-table [value]="pedidos" *ngIf="!vazio">
+              <ng-template pTemplate="header">
+                  <tr>
+                      <th>Doutor</th>
+                      <th>Data</th>
+                      <th>Convênio</th>
+                      <th>Obs</th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-pedido>
+                  <tr>
+                      <td>{{pedido.doutor.nome}}</td>
+                      <td>{{pedido.data | date:'dd/MM/yyyy HH:mm'}}</td>
+                      <td>{{pedido.plano}}</td>
+                      <td>{{pedido.obs}}</td>
+                  </tr>
+              </ng-template>
+            </p-table>
+            <h6 *ngIf="vazio" style="color: gray;">Você ainda não fez nenhuma solicitação</h6>
+            <p></p>
+            <h5>Fazer solicitação de consulta</h5>
+            <div class="row">
+              <div class="col-6">
+                <h6>Doutor(a)</h6>
+                <p-dropdown
+                  [options]="nomeDoutores"
+                  [(ngModel)]="selectedDoctor"
+                  placeholder="Selecione um doutor(a)"
+                  optionLabel="name"
+                  [showClear]="true">
+                </p-dropdown>
+              </div>
+              <div class="col-6">
+                <h6>Data</h6>
+                <p-calendar
+                  inputId="basic"
+                  [(ngModel)]="selectedData"
+                  [showTime]="true"
+                  yearRange="2020:2021"
+                  [disabledDates]="invalidDates">
+                </p-calendar>
+              </div>
+            </div>
+            <h6 style="margin-top: 3px;">Observação</h6>
+            <textarea rows="3" cols="30" pInputTextarea></textarea>
+            <div class="row">
+              <div class="col-9"></div>
+              <div class="col-3" style="text-align: end;">
+                <p-button label="Enviar" (click)="sendPedido()"></p-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+

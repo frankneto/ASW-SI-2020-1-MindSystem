@@ -1,0 +1,26 @@
+[
+    {
+      "id": "1",
+      "nome": "João",
+      "email": "joao@gmail.com",
+      "senha": null,
+      "tpAdmin": true,
+      "pedidos": null
+    },
+    {
+      "id": "2",
+      "nome": "Pedro",
+      "email": "pedro@gmail.com",
+      "senha": null,
+      "tpAdmin": true,
+      "pedidos": null
+    },
+    {
+      "id": "3",
+      "nome": "Maria",
+      "email": "maria@gmail.com",
+      "senha": null,
+      "tpAdmin": true,
+      "pedidos": null
+    }
+]

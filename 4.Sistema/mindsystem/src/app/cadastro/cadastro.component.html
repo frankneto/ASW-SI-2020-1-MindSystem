@@ -1,0 +1,48 @@
+<div class="container" style="width: 450px; margin: 45px 300px 45px 300px;">
+  <p-card>
+    <p-toast position="top-right"></p-toast>
+    <p-header>
+      <h3 style="margin: 9px; text-align: center;">Cadastro</h3>
+    </p-header>
+    <div class="p-d-flex p-jc-center p-fluid">
+      <div class="p-mr-6" style="margin: 9px;">
+        <form [formGroup]="frmUser" (ngSubmit)="onRegister()">
+          <span class="p-float-label">
+            <input
+                pInputText
+                id="nome"
+                formControlName="nome"
+                type="nome">
+            <label for="email">Nome completo</label>
+          </span>
+          <span class="p-float-label" style="margin-top: 30px;">
+            <input
+                pInputText
+                id="email"
+                formControlName="email"
+                type="email">
+            <label for="email">E-mail</label>
+          </span>
+          <!-- <p-message severity="warning"></p-message> -->
+          <span class="p-float-label" style="margin-top: 30px;">
+            <input
+                pPassword
+                id="password"
+                formControlName="senha"
+                type="password"/>
+            <label for="password">Senha</label>
+          </span>
+          <!-- <p-message severity="warning"></p-message> -->
+          <button
+            pButton
+            type="submit"
+            label="Cadastrar"
+            class="p-button-rounded"
+            style="margin-top: 30px;">
+          </button>
+        </form>
+      </div>
+    </div>
+  </p-card>
+</div>
+

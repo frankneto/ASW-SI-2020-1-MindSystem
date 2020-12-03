@@ -1,0 +1,58 @@
+<div class="container" style="width: 450px; margin: 45px 300px 45px 300px;">
+  <p-card>
+    <p-toast position="top-right"></p-toast>
+    <p-header>
+      <h3 style="margin: 9px; text-align: center;">Login MindSystem</h3>
+    </p-header>
+    <div class="p-d-flex p-jc-center p-fluid" style="padding: 0px;">
+      <div class="p-mr-6" style="margin: 9px;">
+        <p-selectButton
+          [options]="stateOptions"
+          [(ngModel)]="value">
+        </p-selectButton>
+        <form [formGroup]="frmLogin" (ngSubmit)="onEnter()">
+          <span class="p-float-label" style="margin-top: 30px;">
+            <input
+                pInputText
+                id="email"
+                formControlName="email"
+                type="email">
+            <label for="email">E-mail</label>
+          </span>
+          <!-- <p-message severity="warning"></p-message> -->
+          <span class="p-float-label" style="margin-top: 30px;">
+            <input
+                pPassword
+                id="password"
+                formControlName="senha"
+                type="password"/>
+            <label for="password">Senha</label>
+          </span>
+          <!-- <p-message severity="warning"></p-message> -->
+          <p-button
+            label="Esqueci minha senha"
+            styleClass="p-button-link"
+            >
+          </p-button>
+          <button
+            pButton
+            type="submit"
+            label="Acessar conta"
+            class="p-button-rounded"
+            style="margin-top: 15px;"
+            [disabled]="inputValid">
+          </button>
+          <button
+            pButton
+            type="button"
+            label="Criar conta"
+            class="p-button-rounded"
+            style="margin-top: 9px;"
+            (click)="goToRegister()">
+          </button>
+        </form>
+      </div>
+    </div>
+  </p-card>
+</div>
+
