@@ -1,0 +1,3 @@
+SOA, SOAP e WSDL; API e Web Services (SC)
+
+Utilização da API do firebase para criação de usuário na base de dados e posterior autenticação dos dados informados para conceder acesso ao usuário cadastrado que entrar com as credenciais corretas.
