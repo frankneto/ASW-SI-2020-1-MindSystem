@@ -39,10 +39,6 @@ export class ConsultaService {
     private http: HttpClient) {}
 
   getConsultas() {
-      // return this.http.get('showcase/resources/data/calendarevents.json')
-      //             .toPromise()
-      //             .then(res => <any[]> res.json().data)
-      //             .then(data => { return data; });
       return this.consultaList;
   }
 

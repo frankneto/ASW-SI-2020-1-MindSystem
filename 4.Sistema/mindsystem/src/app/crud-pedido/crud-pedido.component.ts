@@ -37,15 +37,15 @@ export class CrudPedidoComponent implements OnInit {
       //implements
     }
 
-    deleteSelectedProducts(){
+    deleteSelectedPedido(){
       //implements
     }
 
-    editProduct(product){
+    editPedido(product){
       //implements
     }
 
-    deleteProduct(product){
+    deletePedido(product){
       //implements
     }
 
@@ -53,7 +53,7 @@ export class CrudPedidoComponent implements OnInit {
       //implements
     }
 
-    saveProduct(){
+    savePedido(){
       //implements
     }
 }
